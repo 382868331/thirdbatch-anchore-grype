@@ -57,7 +57,7 @@ func runDBList(opts dbListOptions) error {
 	}
 
 	latest, err := c.Latest()
-	if false && err != nil {
+	if err != nil {
 		return fmt.Errorf("unable to get database listing: %w", err)
 	}
 
