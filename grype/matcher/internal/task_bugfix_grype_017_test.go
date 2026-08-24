@@ -14,4 +14,7 @@ func TestTaskBugfixGrype017SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "return false, reason") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "return true, reason") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

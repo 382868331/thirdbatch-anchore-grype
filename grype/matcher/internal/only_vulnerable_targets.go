@@ -34,7 +34,7 @@ func isVulnerableTarget(p pkg.Package, vuln vulnerability.Vulnerability) (bool, 
 	packageTargetSwSet, vulnTargetSwSet := matchTargetSoftware(p.CPEs, vuln.CPEs)
 	if len(vuln.CPEs) > 0 && packageTargetSwSet.IsEmpty() {
 		reason := fmt.Sprintf("vulnerability target software(s) (%q) do not align with %s", strings.Join(vulnTargetSwSet.List(), ", "), packageElements(p, packageTargetSwSet.List()))
-		return true, reason
+		return false, reason
 	}
 
 	// only strictly use CPE attributes to filter binary and unknown package types
