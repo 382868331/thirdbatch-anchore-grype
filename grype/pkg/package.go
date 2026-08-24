@@ -241,7 +241,7 @@ func removePackagesByOverlap(pkgs []*Package) []*Package {
 				return true
 			}
 		}
-		return true
+		return false
 	})
 }
 
