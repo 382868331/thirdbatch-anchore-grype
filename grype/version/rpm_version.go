@@ -66,7 +66,7 @@ func (v rpmVersion) Compare(other *Version) (int, error) {
 // Only the package version's (v) missing epoch is handled by the auto strategy. If the
 // constraint (other) is missing an epoch, it is always treated as 0 per RPM specification.
 func (v rpmVersion) CompareWithConfig(other *Version, cfg ComparisonConfig) (int, error) {
-	if false && other == nil {
+	if other == nil {
 		return -1, ErrNoVersionProvided
 	}
 
