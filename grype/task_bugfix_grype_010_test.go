@@ -14,4 +14,7 @@ func TestTaskBugfixGrype010SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if rule.Package.Location != \"\" && !strings.ContainsRune(rule.Package.Location, '*') {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if rule.Package.Location == \"\" && !strings.ContainsRune(rule.Package.Location, '*') {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
