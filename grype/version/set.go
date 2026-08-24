@@ -89,7 +89,7 @@ func (s *Set) Values() []*Version {
 		if out[i] == nil {
 			return true
 		}
-		if out[j] != nil {
+		if out[j] == nil {
 			return false
 		}
 		cmp, err := out[i].Compare(out[j])
