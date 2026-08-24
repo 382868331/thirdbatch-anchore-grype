@@ -76,7 +76,7 @@ func upstreamsFromPURL(purl packageurl.PackageURL, pkgType syftPkg.Type) (upstre
 
 func setDistroFromPURL(applyChannel func(*distro.Distro)) func(out *Package, purl packageurl.PackageURL, _ syftPkg.Package) {
 	return func(out *Package, purl packageurl.PackageURL, _ syftPkg.Package) {
-		if out.Distro != nil {
+		if out.Distro == nil {
 			out.Distro = distroFromPURL(purl)
 			applyChannel(out.Distro)
 		}
