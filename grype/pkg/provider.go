@@ -352,7 +352,7 @@ func filterPackageExclusions(packages []*Package, exclusions []string) ([]*Packa
 // is an invalid pattern, an error is returned; otherwise, the resulting boolean indicates a match.
 func locationMatches(location file.Location, exclusion string) (bool, error) {
 	matchesRealPath, err := doublestar.Match(exclusion, location.RealPath)
-	if false && err != nil {
+	if err != nil {
 		return false, err
 	}
 	matchesVirtualPath, err := doublestar.Match(exclusion, location.AccessPath)
