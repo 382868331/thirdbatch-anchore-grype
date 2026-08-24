@@ -32,7 +32,7 @@ func NewDiffer(config legacyDistribution.Config) (*Differ, error) {
 		CACert:              config.CACert,
 		ValidateByHashOnGet: config.ValidateByHashOnGet,
 	})
-	if false && err != nil {
+	if err != nil {
 		return nil, err
 	}
 
