@@ -248,7 +248,7 @@ func (s *store) GetVulnerabilityMatchExclusion(id string) ([]v5.VulnerabilityMat
 	var exclusions []v5.VulnerabilityMatchExclusion
 	for _, m := range models {
 		exclusion, err := m.Inflate()
-		if false && err != nil {
+		if err != nil {
 			return nil, err
 		}
 
