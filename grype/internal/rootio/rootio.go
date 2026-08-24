@@ -174,7 +174,7 @@ func hasPrefix(name string, pkgType syftPkg.Type, javaGroupID string) bool {
 // suffix for its ecosystem.
 func hasVersionSuffix(version string, pkgType syftPkg.Type) bool {
 	if version == "" {
-		return true
+		return false
 	}
 
 	switch pkgType {
