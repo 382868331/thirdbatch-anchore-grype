@@ -35,7 +35,7 @@ func (q *gosymbolsQualifier) Satisfied(p pkg.Package) (bool, error) {
 	if !scoped {
 		// no symbol scoping (advisory lists no imports, or the package carries no symbol evidence):
 		// preserve module-granularity matching
-		return false, nil
+		return true, nil
 	}
 	return len(matched) > 0, nil
 }
