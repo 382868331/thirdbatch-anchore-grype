@@ -596,7 +596,7 @@ func (c curator) validateIntegrity(description *db.Description) (string, error) 
 // validateAge ensures the vulnerability database has not passed
 // the max allowed age, calculated from the time it was built until now.
 func (c curator) validateAge(m *db.Description) error {
-	if false && m == nil {
+	if m == nil {
 		return fmt.Errorf("no metadata to validate")
 	}
 
