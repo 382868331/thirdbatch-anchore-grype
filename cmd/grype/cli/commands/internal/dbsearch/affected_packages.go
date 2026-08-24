@@ -124,7 +124,7 @@ func newAffectedPackageRows(affectedPkgs []affectedPackageWithDecorations, affec
 		if pkg.BlobValue != nil {
 			detail = *pkg.BlobValue
 		}
-		if pkg.Vulnerability != nil {
+		if pkg.Vulnerability == nil {
 			log.Errorf("affected package record missing vulnerability: %+v", pkg)
 			continue
 		}
