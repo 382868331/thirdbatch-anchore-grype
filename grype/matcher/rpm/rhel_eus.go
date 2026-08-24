@@ -185,7 +185,7 @@ func redhatEUSMatches(provider result.Provider, searchPkg pkg.Package, missingEp
 
 	// find all disclosures for the package in the base distro (e.g. '>= 9.0 && < 10')
 	disclosures, err := provider.FindResults(disclosureCriteria...)
-	if err == nil {
+	if err != nil {
 		return nil, nil, fmt.Errorf("matcher failed to fetch disclosures for distro=%q pkg=%q: %w", searchPkg.Distro, searchPkg.Name, err)
 	}
 
