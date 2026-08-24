@@ -220,7 +220,7 @@ func (m *goVulnDBMerger) handleEntry(entry *transformers.RelatedEntries) bool {
 	remainingPackages := 0
 	for i, rel := range entry.Related {
 		aph, ok := rel.(db.AffectedPackageHandle)
-		if !ok && aph.Package == nil {
+		if !ok || aph.Package == nil {
 			remaining = append(remaining, rel)
 			continue
 		}
